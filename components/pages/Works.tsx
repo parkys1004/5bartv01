@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const WORKS_DATA = [
-  { id: 1, title: 'Project Nexus', category: 'Data Visualization', img: 'https://picsum.photos/id/1/800/1000' },
-  { id: 2, title: 'Aura Commerce', category: 'E-Commerce', img: 'https://picsum.photos/id/2/800/1000' },
-  { id: 3, title: 'Cinematic Archive', category: 'Platform', img: 'https://picsum.photos/id/3/800/1000' },
-  { id: 4, title: 'Neon Dreams', category: 'Campaign', img: 'https://picsum.photos/id/4/800/1000' },
-  { id: 5, title: 'Urban Flow', category: 'Photography', img: 'https://picsum.photos/id/5/800/1000' },
-  { id: 6, title: 'Future Tech', category: 'Branding', img: 'https://picsum.photos/id/6/800/1000' },
+  { id: 1, title: 'Urban Night', category: 'Music Video', img: 'https://images.unsplash.com/photo-1514302240736-b1f830689815?q=80&w=800&auto=format&fit=crop' },
+  { id: 2, title: 'Luxury Stay', category: 'Brand Film', img: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=800&auto=format&fit=crop' },
+  { id: 3, title: 'Speed Racer', category: 'Commercial', img: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop' },
+  { id: 4, title: 'Summer Vibe', category: 'Fashion Lookbook', img: 'https://images.unsplash.com/photo-1529139574466-a302d2d3f524?q=80&w=800&auto=format&fit=crop' },
+  { id: 5, title: 'Chef\'s Table', category: 'Documentary', img: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=800&auto=format&fit=crop' },
+  { id: 6, title: 'Neon Cyberpunk', category: 'Art Film', img: 'https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=800&auto=format&fit=crop' },
 ];
 
 const Works: React.FC = () => {
@@ -22,7 +22,7 @@ const Works: React.FC = () => {
         >
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 italic">Selected Works</h1>
           <p className="text-gray-400 font-sans tracking-wide">
-            A curated selection of projects pushing the boundaries of web technology.
+            5barTV가 작업한 다양한 필름과 이미지를 확인해보세요.
           </p>
         </motion.div>
 

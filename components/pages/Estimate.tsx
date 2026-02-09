@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Camera, Box, Sparkles, Video, Calendar, DollarSign, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Camera, Box, Layers, Video, Calendar, DollarSign, CheckCircle2, ArrowRight } from 'lucide-react';
 
-type ServiceType = 'fashion' | 'product' | 'ai' | 'video';
+type ServiceType = 'fashion' | 'product' | 'post' | 'video';
 
 const SERVICES = [
-  { id: 'fashion', label: 'Fashion Editorial', icon: Camera, desc: '화보, 룩북, 인물 촬영', basePrice: 800000 },
-  { id: 'product', label: 'Product & Brand', icon: Box, desc: '제품 누끼, 연출컷', basePrice: 500000 },
-  { id: 'ai', label: 'AI Generation', icon: Sparkles, desc: 'AI 이미지, 복원, 합성', basePrice: 300000 },
-  { id: 'video', label: 'Commercial Film', icon: Video, desc: '광고 영상, 숏폼', basePrice: 1500000 },
+  { id: 'fashion', label: 'Fashion Editorial', icon: Camera, desc: '화보, 룩북, 인물 촬영', basePrice: 1000000 },
+  { id: 'product', label: 'Product & Brand', icon: Box, desc: '제품 누끼, 연출컷', basePrice: 800000 },
+  { id: 'post', label: 'Post Production', icon: Layers, desc: '색보정, 편집, CG 합성', basePrice: 500000 },
+  { id: 'video', label: 'Commercial Film', icon: Video, desc: '광고 영상, 숏폼', basePrice: 2000000 },
 ];
 
 const TIERS = [
-  { id: 'basic', label: 'Basic', multiplier: 1, desc: '기본 촬영 및 보정' },
-  { id: 'standard', label: 'Standard', multiplier: 1.5, desc: '고급 보정 및 추가 컷' },
-  { id: 'premium', label: 'Premium', multiplier: 2.5, desc: '올인원 디렉팅 패키지' },
+  { id: 'basic', label: 'Basic', multiplier: 1, desc: '기본 촬영 및 컷편집' },
+  { id: 'standard', label: 'Standard', multiplier: 1.5, desc: '디테일 보정 및 모션그래픽' },
+  { id: 'premium', label: 'Premium', multiplier: 2.5, desc: '올인원 크리에이티브 디렉팅' },
 ];
 
 const Estimate: React.FC = () => {
@@ -88,7 +88,7 @@ const Estimate: React.FC = () => {
              
              {/* Service Selection */}
              <div>
-                <label className="block text-sm font-bold text-blue-400 mb-6 uppercase tracking-wider">01. Select Service</label>
+                <label className="block text-sm font-bold text-red-500 mb-6 uppercase tracking-wider">01. Select Service</label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {SERVICES.map((service) => (
                     <div
@@ -97,11 +97,11 @@ const Estimate: React.FC = () => {
                       className={`
                         p-6 rounded-xl border cursor-pointer transition-all duration-300
                         ${selectedService === service.id 
-                          ? 'bg-blue-900/20 border-blue-500' 
+                          ? 'bg-red-900/20 border-red-500' 
                           : 'bg-surface border-gray-800 hover:border-gray-600'}
                       `}
                     >
-                      <service.icon className={`w-6 h-6 mb-4 ${selectedService === service.id ? 'text-blue-400' : 'text-gray-500'}`} />
+                      <service.icon className={`w-6 h-6 mb-4 ${selectedService === service.id ? 'text-red-500' : 'text-gray-500'}`} />
                       <h4 className="text-lg font-bold text-white font-serif">{service.label}</h4>
                       <p className="text-xs text-gray-500 mt-1">{service.desc}</p>
                     </div>
@@ -118,7 +118,7 @@ const Estimate: React.FC = () => {
                     exit={{ opacity: 0, height: 0 }}
                     className="overflow-hidden"
                  >
-                    <label className="block text-sm font-bold text-blue-400 mb-6 uppercase tracking-wider">02. Project Scale</label>
+                    <label className="block text-sm font-bold text-red-500 mb-6 uppercase tracking-wider">02. Project Scale</label>
                     <div className="grid grid-cols-3 gap-4">
                       {TIERS.map((tier) => (
                         <div
@@ -144,24 +144,24 @@ const Estimate: React.FC = () => {
              {/* Details */}
              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                   <label className="block text-sm font-bold text-blue-400 mb-4 uppercase tracking-wider">03. Date</label>
+                   <label className="block text-sm font-bold text-red-500 mb-4 uppercase tracking-wider">03. Date</label>
                    <input
                       type="date"
                       required
                       value={date}
                       onChange={(e) => setDate(e.target.value)}
-                      className="w-full bg-surface border border-gray-800 rounded-lg p-4 text-base text-white focus:outline-none focus:border-blue-500 transition-colors [color-scheme:dark]"
+                      className="w-full bg-surface border border-gray-800 rounded-lg p-4 text-base text-white focus:outline-none focus:border-red-500 transition-colors [color-scheme:dark]"
                     />
                 </div>
                 <div>
-                   <label className="block text-sm font-bold text-blue-400 mb-4 uppercase tracking-wider">04. Contact</label>
+                   <label className="block text-sm font-bold text-red-500 mb-4 uppercase tracking-wider">04. Contact</label>
                    <input
                       type="text"
                       placeholder="Name"
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full bg-surface border border-gray-800 rounded-lg p-4 text-base text-white mb-4 focus:outline-none focus:border-blue-500"
+                      className="w-full bg-surface border border-gray-800 rounded-lg p-4 text-base text-white mb-4 focus:outline-none focus:border-red-500"
                     />
                    <input
                       type="email"
@@ -169,7 +169,7 @@ const Estimate: React.FC = () => {
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-surface border border-gray-800 rounded-lg p-4 text-base text-white focus:outline-none focus:border-blue-500"
+                      className="w-full bg-surface border border-gray-800 rounded-lg p-4 text-base text-white focus:outline-none focus:border-red-500"
                     />
                 </div>
              </div>
@@ -181,7 +181,7 @@ const Estimate: React.FC = () => {
                 w-full py-5 rounded-full font-bold text-lg flex items-center justify-center gap-2 transition-all
                 ${isSubmitting || !selectedService || !date
                   ? 'bg-gray-900 text-gray-600 cursor-not-allowed'
-                  : 'bg-blue-600 text-white hover:bg-blue-500 shadow-lg shadow-blue-900/30'}
+                  : 'bg-red-600 text-white hover:bg-red-500 shadow-lg shadow-red-900/30'}
               `}
             >
               {isSubmitting ? 'Processing...' : 'Submit Request'}
@@ -195,7 +195,7 @@ const Estimate: React.FC = () => {
           <div className="sticky top-32">
             <div className="bg-surface border border-gray-800 rounded-2xl p-8 relative overflow-hidden">
                {/* Background Glow */}
-               <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+               <div className="absolute -top-10 -right-10 w-40 h-40 bg-red-500/10 rounded-full blur-3xl pointer-events-none" />
                
                <h3 className="text-xl font-serif font-bold text-white mb-6 italic border-b border-gray-800 pb-4">Estimated Cost</h3>
                
@@ -212,7 +212,7 @@ const Estimate: React.FC = () => {
 
                <div className="flex justify-between items-end text-white pt-6 border-t border-gray-800">
                  <span className="text-sm font-bold uppercase tracking-wider text-gray-500">Total</span>
-                 <span className="text-3xl font-bold font-sans text-blue-400">
+                 <span className="text-3xl font-bold font-sans text-red-500">
                    ₩ {estimatedCost.toLocaleString()}
                  </span>
                </div>

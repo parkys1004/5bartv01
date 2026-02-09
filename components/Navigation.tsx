@@ -23,7 +23,7 @@ const Navigation: React.FC = () => {
 
   const navLinks = [
     { name: 'Works', href: '/works' },
-    { name: 'AI Studio', href: '/ai-studio' },
+    { name: 'Retouch', href: '/ai-studio' }, // Link to comparison page
     { name: 'Estimate', href: '/estimate' },
     { name: 'About', href: '/about' },
   ];
@@ -37,10 +37,10 @@ const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="relative group overflow-hidden">
           <span className="text-2xl font-serif font-black tracking-tighter text-white block transform transition-transform duration-500 group-hover:-translate-y-full">
-            KJH.DEV
+            5barTV
           </span>
-          <span className="absolute top-0 left-0 text-2xl font-serif font-black tracking-tighter text-gray-500 block transform translate-y-full transition-transform duration-500 group-hover:translate-y-0">
-            KJH.DEV
+          <span className="absolute top-0 left-0 text-2xl font-serif font-black tracking-tighter text-red-600 block transform translate-y-full transition-transform duration-500 group-hover:translate-y-0">
+            5barTV
           </span>
         </Link>
 
@@ -59,7 +59,7 @@ const Navigation: React.FC = () => {
               {({ isActive }) => (
                 <>
                   {link.name}
-                  <span className={`absolute -bottom-1 left-0 w-full h-[1px] bg-white transform origin-left transition-transform duration-300 ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-50'}`} />
+                  <span className={`absolute -bottom-1 left-0 w-full h-[1px] bg-red-600 transform origin-left transition-transform duration-300 ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-50'}`} />
                 </>
               )}
             </NavLink>

@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
               className="text-gray-400 text-xs md:text-sm tracking-[0.5em] uppercase border border-gray-700 px-6 py-2 rounded-full bg-black/30 backdrop-blur-sm font-sans"
             >
-              Portfolio 2024
+              5barTV Production 2024
             </motion.p>
           </div>
         </motion.div>
@@ -84,20 +84,20 @@ const Hero: React.FC = () => {
             variants={textRevealVariants}
             className="text-6xl md:text-[9rem] font-serif font-black text-white leading-[0.85] tracking-tight mix-blend-difference italic relative z-10"
            >
-            CRAFTING
+            CAPTURING
            </motion.h1>
            <motion.h1 
             variants={textRevealVariants}
-            className="text-6xl md:text-[9rem] font-serif font-black leading-[0.85] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-gray-500 to-gray-800"
+            className="text-6xl md:text-[9rem] font-serif font-black leading-[0.85] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-400 to-gray-700"
            >
-            DIGITAL REALITY
+            VISUAL LEGACY
            </motion.h1>
         </div>
 
         <motion.div variants={itemVariants}>
           <p className="text-gray-300 text-lg md:text-2xl max-w-2xl mx-auto font-light leading-relaxed tracking-wide mix-blend-plus-lighter font-sans">
-            <span className="opacity-70 inline-block border-b border-gray-700 pb-1 mb-2">기술과 예술의 경계에서,</span><br/>
-            몰입감 넘치는 웹 경험을 설계하는 프론트엔드 엔지니어 김지훈입니다.
+            <span className="opacity-70 inline-block border-b border-gray-700 pb-1 mb-2">프레임 그 이상의 가치,</span><br/>
+            시선을 사로잡는 시네마틱 비주얼 스튜디오 <strong className="text-white">5barTV</strong>입니다.
           </p>
         </motion.div>
       </motion.div>
@@ -109,8 +109,8 @@ const Hero: React.FC = () => {
         transition={{ delay: 2.5, duration: 1.5 }}
         className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3 z-20"
       >
-        <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-sans">Explore</span>
-        <div className="w-[1px] h-24 bg-gradient-to-b from-gray-500/0 via-white to-gray-500/0 animate-pulse-slow"></div>
+        <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-sans">Scroll</span>
+        <div className="w-[1px] h-24 bg-gradient-to-b from-gray-500/0 via-red-500 to-gray-500/0 animate-pulse-slow"></div>
       </motion.div>
     </section>
   );
