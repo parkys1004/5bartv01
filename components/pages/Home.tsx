@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../Hero';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Aperture, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
@@ -15,20 +15,33 @@ const Home: React.FC = () => {
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
            transition={{ duration: 0.8 }}
-           className="max-w-3xl mx-auto"
+           className="max-w-4xl mx-auto"
         >
+          <div className="flex justify-center gap-4 mb-6">
+            <Aperture className="text-gray-500 w-8 h-8" />
+            <span className="text-gray-700 text-2xl font-light">+</span>
+            <Sparkles className="text-red-500 w-8 h-8" />
+          </div>
+
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-8 leading-tight">
-            We Create <span className="italic text-gray-500">Masterpieces</span>
+            The Fusion of <br />
+            <span className="italic text-gray-500">Analog Lens</span> & <span className="italic text-red-500">Neural Engine</span>
           </h2>
           <p className="text-gray-400 mb-10 leading-relaxed font-sans text-lg">
-            단순한 영상 제작을 넘어 브랜드의 아이덴티티를 확립하는<br className="hidden md:block"/>
-            크리에이티브 파트너가 되어드립니다.<br/><br/>
-            기획부터 촬영, 편집, 그리고 색보정까지.<br/>
-            5barTV만의 독보적인 톤앤매너를 경험하세요.
+            최고의 장비로 촬영된 고해상도 이미지라도 완벽할 수는 없습니다.<br/>
+            하지만 5barTV의 <strong>AI 후처리 프로세스</strong>를 거치면 이야기는 달라집니다.<br/><br/>
+            피부의 미세한 결을 살리는 하이엔드 리터칭부터,<br/>
+            존재하지 않는 배경을 생성하는 Creative AI까지.<br/>
+            당신의 사진을 '작품'으로 승화시킵니다.
           </p>
-          <Link to="/works" className="inline-flex items-center gap-2 text-white border-b border-white pb-1 hover:text-red-500 hover:border-red-500 transition-colors font-sans tracking-wide uppercase text-sm">
-            View Showreel <ArrowRight size={16} />
-          </Link>
+          <div className="flex justify-center gap-6">
+            <Link to="/works" className="inline-flex items-center gap-2 text-white border-b border-white pb-1 hover:text-gray-300 hover:border-gray-300 transition-colors font-sans tracking-wide uppercase text-sm">
+              View Portfolio <ArrowRight size={16} />
+            </Link>
+            <Link to="/ai-studio" className="inline-flex items-center gap-2 text-red-500 border-b border-red-500 pb-1 hover:text-red-400 hover:border-red-400 transition-colors font-sans tracking-wide uppercase text-sm">
+              Experience AI Lab <ArrowRight size={16} />
+            </Link>
+          </div>
         </motion.div>
       </section>
     </>

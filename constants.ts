@@ -2,68 +2,67 @@ import { Project, Skill } from './types';
 
 export const PORTFOLIO_DATA = {
   name: "5barTV",
-  title: "Creative Visual Director",
-  bio: "순간을 영원으로 기록하는 비주얼 디렉터입니다. 감각적인 촬영과 섬세한 편집으로 당신만의 스토리를 시네마틱하게 완성합니다.",
+  title: "Visual Director & AI Specialist",
+  bio: "셔터가 닫히는 순간 예술이 시작됩니다. 하이엔드 포토그래피와 생성형 AI의 결합으로 현실 그 이상의 비주얼을 완성합니다.",
   aboutDetailed: `
-    안녕하세요, 5barTV의 메인 디렉터입니다.
+    5barTV는 단순한 스튜디오가 아닙니다.
+    우리는 광학적 렌즈로 포착한 '결정적 순간'에 최첨단 AI 기술을 더해 시각적 한계를 뛰어넘습니다.
 
-    영상은 단순한 기록을 넘어, 그 날의 온도와 감정까지 담아내는 매체라고 생각합니다.
-    CF, 뮤직비디오, 브랜드 필름 등 다양한 필드에서의 경험을 바탕으로
-    단 한 컷에도 의미를 담는 밀도 높은 작업을 추구합니다.
+    인물 사진의 미세한 피부 질감 복원부터, 상업 사진의 배경 생성 및 합성, 
+    그리고 손상된 과거 사진의 완벽한 4K 복원까지.
 
-    최고의 장비와 트렌디한 감각으로, 클라이언트가 상상하는 그 이상의 결과물을 약속드립니다.
+    아날로그의 감성과 디지털의 정밀함이 만나는 곳,
+    5barTV가 당신의 이미지를 완벽하게 재정의합니다.
   `
 };
 
 export const SKILLS: Skill[] = [
   {
-    category: "Cinematography",
-    items: ["Sony FX6/A7S3", "Ronin 4D", "Drone Lighting", "Anamorphic Lens"]
+    category: "High-End Photography",
+    items: ["Phase One IQ4", "Sony A7R5", "Profoto Lighting", "Fine Art Portrait"]
   },
   {
-    category: "Post-Production",
-    items: ["DaVinci Resolve", "Premiere Pro", "After Effects", "Final Cut Pro"]
+    category: "AI & Retouching",
+    items: ["Generative Fill", "Stable Diffusion", "Frequency Separation", "Old Photo Restoration"]
   },
   {
-    category: "Directing",
-    items: ["Storyboarding", "Location Scouting", "Art Direction", "Sound Design"]
+    category: "Creative Direction",
+    items: ["Concept Art", "Set Design", "Visual Storytelling", "Color Grading"]
   }
 ];
 
 export const PROJECTS: Project[] = [
   {
     id: "1",
-    title: "Midnight Seoul",
-    description: "서울의 밤거리를 주제로 한 시네마틱 브이로그. 네온사인과 도시의 고독을 4K 120fps로 포착.",
-    techStack: ["Sony FX3", "DaVinci Resolve", "Color Grading"],
-    imageUrl: "https://picsum.photos/800/600?random=10",
+    title: "AI Editorial Vogue",
+    description: "스튜디오 인물 촬영본에 AI 배경 확장을 적용하여 초현실적인 패션 화보 완성.",
+    techStack: ["Photography", "Generative Fill", "Retouching"],
+    imageUrl: "https://picsum.photos/800/600?random=20",
     link: "#"
   },
   {
     id: "2",
-    title: "Vogue Editorial",
-    description: "패션 매거진 화보 촬영 스케치 필름. 모델의 역동적인 움직임과 의상의 질감을 강조.",
-    techStack: ["Canon R5", "Premiere Pro", "Slow Motion"],
-    imageUrl: "https://picsum.photos/800/600?random=11",
+    title: "Legacy Restoration",
+    description: "1950년대 흑백 손상 사진을 4K 컬러로 복원. AI 노이즈 제거 및 디테일 재구성 기술 적용.",
+    techStack: ["Restoration AI", "Colorization", "Detail Enhance"],
+    imageUrl: "https://picsum.photos/800/600?random=21",
     link: "#"
   },
   {
     id: "3",
-    title: "Essence of Coffee",
-    description: "프리미엄 카페 브랜드 광고 영상. 커피 추출 과정의 디테일을 매크로 렌즈로 담아냄.",
-    techStack: ["Red Komodo", "Macro Lens", "Sound Design"],
-    imageUrl: "https://picsum.photos/800/600?random=12",
+    title: "Product Surrealism",
+    description: "제품 누끼 촬영 후 Stable Diffusion을 활용하여 브랜드 아이덴티티에 맞는 가상 공간 합성.",
+    techStack: ["Commercial Photo", "Stable Diffusion", "Compositing"],
+    imageUrl: "https://picsum.photos/800/600?random=22",
     link: "#"
   }
 ];
 
 export const AI_SYSTEM_INSTRUCTION = `
-You are the AI assistant for 5barTV, a creative visual director portfolio.
-Your role is to answer questions about 5barTV's services, skills, portfolio, and contact information.
-You should be professional, creative, and helpful.
+You are the AI assistant for 5barTV, a studio specializing in High-End Photography and AI Retouching.
+Your role is to explain how 5barTV combines traditional photography with modern AI technology to create perfect images.
 
-Use the following information to answer user queries:
-
+Use the following information:
 Portfolio Name: ${PORTFOLIO_DATA.name}
 Title: ${PORTFOLIO_DATA.title}
 Bio: ${PORTFOLIO_DATA.bio}
@@ -75,6 +74,6 @@ ${SKILLS.map(s => `- ${s.category}: ${s.items.join(', ')}`).join('\n')}
 Projects:
 ${PROJECTS.map(p => `- ${p.title}: ${p.description} (Tech: ${p.techStack.join(', ')})`).join('\n')}
 
-If you are asked about something not related to the portfolio or video production, politely guide the conversation back to 5barTV's services.
+Emphasize the synergy between human artistic direction (Photography) and AI precision (Retouching/Restoration).
 Answer in Korean unless asked in another language.
 `;

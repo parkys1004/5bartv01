@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const WORKS_DATA = [
-  { id: 1, title: 'Urban Night', category: 'Music Video', img: 'https://images.unsplash.com/photo-1514302240736-b1f830689815?q=80&w=800&auto=format&fit=crop' },
-  { id: 2, title: 'Luxury Stay', category: 'Brand Film', img: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=800&auto=format&fit=crop' },
-  { id: 3, title: 'Speed Racer', category: 'Commercial', img: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop' },
-  { id: 4, title: 'Summer Vibe', category: 'Fashion Lookbook', img: 'https://images.unsplash.com/photo-1529139574466-a302d2d3f524?q=80&w=800&auto=format&fit=crop' },
-  { id: 5, title: 'Chef\'s Table', category: 'Documentary', img: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=800&auto=format&fit=crop' },
-  { id: 6, title: 'Neon Cyberpunk', category: 'Art Film', img: 'https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=800&auto=format&fit=crop' },
+  { id: 1, title: 'Ethereal Portrait', category: 'Fine Art Photography', img: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop' },
+  { id: 2, title: 'Neo Tokyo', category: 'AI Composite Art', img: 'https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=800&auto=format&fit=crop' },
+  { id: 3, title: 'Product Vision', category: 'Commercial & AI Background', img: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop' },
+  { id: 4, title: 'Memory Restored', category: 'AI Restoration', img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop' },
+  { id: 5, title: 'Monochrome Soul', category: 'Black & White', img: 'https://images.unsplash.com/photo-1589317621382-0af47dfa74e5?q=80&w=800&auto=format&fit=crop' },
+  { id: 6, title: 'Digital Fashion', category: 'Editorial Lookbook', img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop' },
 ];
 
 const Works: React.FC = () => {
@@ -22,7 +22,7 @@ const Works: React.FC = () => {
         >
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 italic">Selected Works</h1>
           <p className="text-gray-400 font-sans tracking-wide">
-            5barTV가 작업한 다양한 필름과 이미지를 확인해보세요.
+            렌즈로 포착하고 AI로 완성한 5barTV의 포트폴리오를 확인하세요.
           </p>
         </motion.div>
 
@@ -46,7 +46,7 @@ const Works: React.FC = () => {
                 <h3 className="text-2xl font-serif italic text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   {work.title}
                 </h3>
-                <p className="text-xs font-sans text-gray-300 uppercase tracking-widest transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                <p className="text-xs font-sans text-red-400 uppercase tracking-widest transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
                   {work.category}
                 </p>
               </div>

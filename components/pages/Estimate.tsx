@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Camera, Box, Layers, Video, Calendar, DollarSign, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Camera, Wand2, Image, Video, Calendar, CheckCircle2 } from 'lucide-react';
 
-type ServiceType = 'fashion' | 'product' | 'post' | 'video';
+type ServiceType = 'portrait' | 'commercial' | 'restoration' | 'video';
 
 const SERVICES = [
-  { id: 'fashion', label: 'Fashion Editorial', icon: Camera, desc: '화보, 룩북, 인물 촬영', basePrice: 1000000 },
-  { id: 'product', label: 'Product & Brand', icon: Box, desc: '제품 누끼, 연출컷', basePrice: 800000 },
-  { id: 'post', label: 'Post Production', icon: Layers, desc: '색보정, 편집, CG 합성', basePrice: 500000 },
-  { id: 'video', label: 'Commercial Film', icon: Video, desc: '광고 영상, 숏폼', basePrice: 2000000 },
+  { id: 'portrait', label: 'Fine Art Portrait', icon: Camera, desc: '개인화보, 프로필, 룩북 촬영', basePrice: 500000 },
+  { id: 'commercial', label: 'Product & Brand', icon: Image, desc: '제품 촬영, 누끼 및 합성', basePrice: 800000 },
+  { id: 'restoration', label: 'AI Restoration', icon: Wand2, desc: '사진 복원, 화질 개선, AI 리터칭', basePrice: 300000 },
+  { id: 'video', label: 'Sketch Film', icon: Video, desc: '촬영 현장 스케치 영상', basePrice: 600000 },
 ];
 
 const TIERS = [
-  { id: 'basic', label: 'Basic', multiplier: 1, desc: '기본 촬영 및 컷편집' },
-  { id: 'standard', label: 'Standard', multiplier: 1.5, desc: '디테일 보정 및 모션그래픽' },
-  { id: 'premium', label: 'Premium', multiplier: 2.5, desc: '올인원 크리에이티브 디렉팅' },
+  { id: 'basic', label: 'Basic', multiplier: 1, desc: '촬영 원본 + 기본 색감 보정' },
+  { id: 'retouch', label: 'Pro Retouch', multiplier: 1.5, desc: '정밀 피부 보정 + 톤앤매너 작업' },
+  { id: 'ai_art', label: 'AI Creative', multiplier: 2.5, desc: 'AI 배경 합성 + 창작 아트웍 리터칭' },
 ];
 
 const Estimate: React.FC = () => {
@@ -55,14 +55,14 @@ const Estimate: React.FC = () => {
           </div>
           <h3 className="text-3xl font-serif font-bold text-white mb-4 italic">Request Received</h3>
           <p className="text-gray-400 mb-8 font-sans">
-            견적 요청이 성공적으로 전송되었습니다.<br/>
-            담당자가 내용을 확인 후 24시간 이내에 연락드리겠습니다.
+            촬영 및 AI 작업 요청이 접수되었습니다.<br/>
+            내용 확인 후 24시간 이내에 포트폴리오와 견적서를 보내드립니다.
           </p>
           <button 
             onClick={() => { setIsSuccess(false); setSelectedService(null); setName(''); setEmail(''); }}
             className="px-6 py-3 bg-white text-black rounded-full font-bold hover:bg-gray-200 transition-colors font-sans"
           >
-            새로운 견적 요청하기
+            추가 문의하기
           </button>
         </motion.div>
       </div>
@@ -80,15 +80,15 @@ const Estimate: React.FC = () => {
              animate={{ opacity: 1, y: 0 }}
              className="mb-12"
            >
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-4 italic">Get an Estimate</h1>
-            <p className="text-gray-400">프로젝트 규모에 따른 예상 견적을 실시간으로 확인하세요.</p>
+            <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-4 italic">Start Project</h1>
+            <p className="text-gray-400">사진 촬영부터 AI 아트웍 작업까지, 맞춤형 견적을 확인하세요.</p>
            </motion.div>
 
            <form onSubmit={handleSubmit} className="space-y-12">
              
              {/* Service Selection */}
              <div>
-                <label className="block text-sm font-bold text-red-500 mb-6 uppercase tracking-wider">01. Select Service</label>
+                <label className="block text-sm font-bold text-red-500 mb-6 uppercase tracking-wider">01. Service Type</label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {SERVICES.map((service) => (
                     <div
@@ -118,8 +118,8 @@ const Estimate: React.FC = () => {
                     exit={{ opacity: 0, height: 0 }}
                     className="overflow-hidden"
                  >
-                    <label className="block text-sm font-bold text-red-500 mb-6 uppercase tracking-wider">02. Project Scale</label>
-                    <div className="grid grid-cols-3 gap-4">
+                    <label className="block text-sm font-bold text-red-500 mb-6 uppercase tracking-wider">02. Retouching Level</label>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       {TIERS.map((tier) => (
                         <div
                           key={tier.id}
@@ -132,11 +132,11 @@ const Estimate: React.FC = () => {
                           `}
                         >
                           <span className="block text-lg font-bold font-serif mb-1">{tier.label}</span>
-                          <span className="text-[10px] uppercase tracking-wider opacity-70">x{tier.multiplier}</span>
+                          <span className="text-[10px] uppercase tracking-wider opacity-70 block mb-2">x{tier.multiplier}</span>
+                          <p className="text-[11px] opacity-60 leading-tight">{tier.desc}</p>
                         </div>
                       ))}
                     </div>
-                    <p className="mt-4 text-gray-500 text-sm">* {TIERS.find(t => t.id === selectedTier)?.desc}</p>
                  </motion.div>
                )}
              </AnimatePresence>
@@ -184,7 +184,7 @@ const Estimate: React.FC = () => {
                   : 'bg-red-600 text-white hover:bg-red-500 shadow-lg shadow-red-900/30'}
               `}
             >
-              {isSubmitting ? 'Processing...' : 'Submit Request'}
+              {isSubmitting ? 'Processing...' : 'Request Estimate'}
             </button>
 
            </form>
@@ -201,11 +201,11 @@ const Estimate: React.FC = () => {
                
                <div className="space-y-4 mb-8">
                  <div className="flex justify-between text-gray-400">
-                   <span>Base Price</span>
+                   <span>Service Base</span>
                    <span>₩ {base.toLocaleString()}</span>
                  </div>
                  <div className="flex justify-between text-gray-400">
-                   <span>Scale Multiplier</span>
+                   <span>Retouch Level</span>
                    <span>x {multiplier}</span>
                  </div>
                </div>
@@ -218,7 +218,7 @@ const Estimate: React.FC = () => {
                </div>
                
                <p className="text-xs text-gray-600 mt-6 leading-relaxed">
-                 * 위 견적은 예상 금액이며, 프로젝트 세부 내용에 따라 최종 견적은 달라질 수 있습니다.
+                 * AI 복원 작업의 경우 사진 손상도에 따라 추가 비용이 발생할 수 있습니다.
                </p>
             </div>
           </div>
