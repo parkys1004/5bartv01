@@ -48,14 +48,14 @@ const Hero: React.FC = () => {
           loop
           muted
           playsInline
-          poster="https://images.pexels.com/videos/2516159/pictures/preview-0.jpg" 
-          className="w-full h-full object-cover opacity-50 scale-105"
+          poster="https://images.pexels.com/videos/3205908/pictures/preview-0.jpg" 
+          className="w-full h-full object-cover opacity-40 scale-105"
         >
-          {/* Abstract Dark Smoke/Ink Video */}
-          <source src="https://videos.pexels.com/video-files/2516159/2516159-hd_1920_1080_24fps.mp4" type="video/mp4" />
+          {/* Camera Lens / Studio Video */}
+          <source src="https://videos.pexels.com/video-files/3205908/3205908-hd_1920_1080_25fps.mp4" type="video/mp4" />
         </video>
         {/* Dark Overlay for Text Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90" />
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
       </div>
       
