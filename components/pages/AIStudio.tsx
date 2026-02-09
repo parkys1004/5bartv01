@@ -28,7 +28,7 @@ const COMPARISONS = [
 
 const AIStudioPage: React.FC = () => {
   return (
-    <div className="min-h-screen pt-32 pb-24 px-6 bg-black">
+    <div className="min-h-screen pt-32 pb-24 px-6 bg-background">
        <div className="max-w-4xl mx-auto">
         <motion.div 
           initial={{ opacity: 0 }}
@@ -38,10 +38,10 @@ const AIStudioPage: React.FC = () => {
           <span className="text-red-500 font-bold tracking-[0.2em] uppercase text-xs mb-4 block font-sans">
             AI-Driven Photography Lab
           </span>
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold text-primary mb-6">
             AI Visual Lab
           </h1>
-          <p className="text-gray-400 font-sans max-w-2xl mx-auto leading-relaxed">
+          <p className="text-secondary font-sans max-w-2xl mx-auto leading-relaxed">
             5barTV의 기술력은 단순한 보정을 넘어 '복원'과 '창조'의 영역에 있습니다.<br/>
             흐릿한 기억을 선명한 현실로, 평범한 사진을 예술로 바꿉니다.
           </p>
@@ -58,11 +58,11 @@ const AIStudioPage: React.FC = () => {
             >
               <div className="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
-                  <h2 className="text-2xl font-serif italic text-white mb-2">{item.title}</h2>
-                  <p className="text-sm text-gray-500 font-sans">{item.desc}</p>
+                  <h2 className="text-2xl font-serif italic text-primary mb-2">{item.title}</h2>
+                  <p className="text-sm text-secondary font-sans">{item.desc}</p>
                 </div>
                 <div className="flex gap-2">
-                  <span className="text-[10px] font-mono text-gray-500 border border-gray-800 px-2 py-1 rounded">Neural Engine</span>
+                  <span className="text-[10px] font-mono text-secondary border border-border px-2 py-1 rounded">Neural Engine</span>
                   <span className="text-[10px] font-mono text-red-500 border border-red-900/30 px-2 py-1 rounded bg-red-900/10">Gen-AI</span>
                 </div>
               </div>

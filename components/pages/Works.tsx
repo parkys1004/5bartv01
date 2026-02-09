@@ -12,7 +12,7 @@ const WORKS_DATA = [
 
 const Works: React.FC = () => {
   return (
-    <div className="min-h-screen pt-32 pb-24 px-6 bg-black">
+    <div className="min-h-screen pt-32 pb-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -20,8 +20,8 @@ const Works: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="mb-16 text-center"
         >
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 italic">Selected Works</h1>
-          <p className="text-gray-400 font-sans tracking-wide">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold text-primary mb-6 italic">Selected Works</h1>
+          <p className="text-secondary font-sans tracking-wide">
             렌즈로 포착하고 AI로 완성한 5barTV의 포트폴리오를 확인하세요.
           </p>
         </motion.div>
@@ -34,7 +34,7 @@ const Works: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="group relative aspect-[3/4] overflow-hidden bg-gray-900 cursor-pointer"
+              className="group relative aspect-[3/4] overflow-hidden bg-surface cursor-pointer"
             >
               <img 
                 src={work.img} 

@@ -23,7 +23,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <CustomCursor />
-      <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black font-sans">
+      <div className="min-h-screen bg-background text-primary selection:bg-primary selection:text-background font-sans transition-colors duration-300">
         <Navigation />
         
         <main>

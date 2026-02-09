@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
       rotateX: 0,
       transition: {
         duration: 1.5,
-        ease: [0.19, 1, 0.22, 1], // "Expo" ease for dramatic effect
+        ease: [0.19, 1, 0.22, 1] as [number, number, number, number], // "Expo" ease for dramatic effect
       }
     },
   };
@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
       y: 0,
       transition: {
         duration: 1.2,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
       }
     }
   };
@@ -54,8 +54,8 @@ const Hero: React.FC = () => {
           {/* Camera Lens / Studio Video */}
           <source src="https://videos.pexels.com/video-files/3205908/3205908-hd_1920_1080_25fps.mp4" type="video/mp4" />
         </video>
-        {/* Dark Overlay for Text Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90" />
+        {/* Dark Overlay for Text Contrast - updated to fade to 'background' variable */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-black/50 to-background/90" />
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
       </div>
       
@@ -82,7 +82,7 @@ const Hero: React.FC = () => {
         <div className="mb-8 relative">
            <motion.h1 
             variants={textRevealVariants}
-            className="text-6xl md:text-[9rem] font-serif font-black text-white leading-[0.85] tracking-tight mix-blend-difference italic relative z-10"
+            className="text-6xl md:text-[9rem] font-serif font-black text-primary leading-[0.85] tracking-tight mix-blend-difference italic relative z-10"
            >
             CAPTURING
            </motion.h1>
@@ -95,9 +95,9 @@ const Hero: React.FC = () => {
         </div>
 
         <motion.div variants={itemVariants}>
-          <p className="text-gray-300 text-lg md:text-2xl max-w-2xl mx-auto font-light leading-relaxed tracking-wide mix-blend-plus-lighter font-sans">
-            <span className="opacity-70 inline-block border-b border-gray-700 pb-1 mb-2">셔터로 기록하고, AI로 완성하다.</span><br/>
-            5barTV는 <strong className="text-white">사진 촬영</strong>과 <strong className="text-white">AI 리터칭</strong>의 경계를 허뭅니다.
+          <p className="text-secondary text-lg md:text-2xl max-w-2xl mx-auto font-light leading-relaxed tracking-wide mix-blend-plus-lighter font-sans">
+            <span className="opacity-70 inline-block border-b border-border pb-1 mb-2">셔터로 기록하고, AI로 완성하다.</span><br/>
+            5barTV는 <strong className="text-primary">사진 촬영</strong>과 <strong className="text-primary">AI 리터칭</strong>의 경계를 허뭅니다.
           </p>
         </motion.div>
       </motion.div>
@@ -109,7 +109,7 @@ const Hero: React.FC = () => {
         transition={{ delay: 2.5, duration: 1.5 }}
         className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3 z-20"
       >
-        <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-sans">Explore</span>
+        <span className="text-[10px] uppercase tracking-[0.2em] text-secondary font-sans">Explore</span>
         <div className="w-[1px] h-24 bg-gradient-to-b from-gray-500/0 via-red-500 to-gray-500/0 animate-pulse-slow"></div>
       </motion.div>
     </section>

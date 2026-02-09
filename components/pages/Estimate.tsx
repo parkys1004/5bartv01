@@ -44,23 +44,23 @@ const Estimate: React.FC = () => {
 
   if (isSuccess) {
     return (
-      <div className="min-h-screen pt-32 pb-24 px-6 bg-black flex items-center justify-center">
+      <div className="min-h-screen pt-32 pb-24 px-6 bg-background flex items-center justify-center">
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="text-center p-8 max-w-lg bg-surface border border-gray-800 rounded-2xl"
+          className="text-center p-8 max-w-lg bg-surface border border-border rounded-2xl"
         >
           <div className="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 size={40} />
           </div>
-          <h3 className="text-3xl font-serif font-bold text-white mb-4 italic">Request Received</h3>
-          <p className="text-gray-400 mb-8 font-sans">
+          <h3 className="text-3xl font-serif font-bold text-primary mb-4 italic">Request Received</h3>
+          <p className="text-secondary mb-8 font-sans">
             촬영 및 AI 작업 요청이 접수되었습니다.<br/>
             내용 확인 후 24시간 이내에 포트폴리오와 견적서를 보내드립니다.
           </p>
           <button 
             onClick={() => { setIsSuccess(false); setSelectedService(null); setName(''); setEmail(''); }}
-            className="px-6 py-3 bg-white text-black rounded-full font-bold hover:bg-gray-200 transition-colors font-sans"
+            className="px-6 py-3 bg-primary text-background rounded-full font-bold hover:opacity-80 transition-colors font-sans"
           >
             추가 문의하기
           </button>
@@ -70,7 +70,7 @@ const Estimate: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen pt-32 pb-24 px-6 bg-black font-sans">
+    <div className="min-h-screen pt-32 pb-24 px-6 bg-background font-sans transition-colors duration-300">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
         
         {/* Left Column: Form */}
@@ -80,8 +80,8 @@ const Estimate: React.FC = () => {
              animate={{ opacity: 1, y: 0 }}
              className="mb-12"
            >
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-4 italic">Start Project</h1>
-            <p className="text-gray-400">사진 촬영부터 AI 아트웍 작업까지, 맞춤형 견적을 확인하세요.</p>
+            <h1 className="text-4xl md:text-6xl font-serif font-bold text-primary mb-4 italic">Start Project</h1>
+            <p className="text-secondary">사진 촬영부터 AI 아트웍 작업까지, 맞춤형 견적을 확인하세요.</p>
            </motion.div>
 
            <form onSubmit={handleSubmit} className="space-y-12">
@@ -97,13 +97,13 @@ const Estimate: React.FC = () => {
                       className={`
                         p-6 rounded-xl border cursor-pointer transition-all duration-300
                         ${selectedService === service.id 
-                          ? 'bg-red-900/20 border-red-500' 
-                          : 'bg-surface border-gray-800 hover:border-gray-600'}
+                          ? 'bg-red-900/10 border-red-500' 
+                          : 'bg-surface border-border hover:border-secondary'}
                       `}
                     >
-                      <service.icon className={`w-6 h-6 mb-4 ${selectedService === service.id ? 'text-red-500' : 'text-gray-500'}`} />
-                      <h4 className="text-lg font-bold text-white font-serif">{service.label}</h4>
-                      <p className="text-xs text-gray-500 mt-1">{service.desc}</p>
+                      <service.icon className={`w-6 h-6 mb-4 ${selectedService === service.id ? 'text-red-500' : 'text-secondary'}`} />
+                      <h4 className="text-lg font-bold text-primary font-serif">{service.label}</h4>
+                      <p className="text-xs text-secondary mt-1">{service.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -127,8 +127,8 @@ const Estimate: React.FC = () => {
                           className={`
                             p-4 rounded-xl border cursor-pointer text-center transition-all
                             ${selectedTier === tier.id 
-                              ? 'bg-white text-black border-white' 
-                              : 'bg-surface border-gray-800 text-gray-400 hover:border-gray-600'}
+                              ? 'bg-primary text-background border-primary' 
+                              : 'bg-surface border-border text-secondary hover:border-secondary'}
                           `}
                         >
                           <span className="block text-lg font-bold font-serif mb-1">{tier.label}</span>
@@ -150,7 +150,7 @@ const Estimate: React.FC = () => {
                       required
                       value={date}
                       onChange={(e) => setDate(e.target.value)}
-                      className="w-full bg-surface border border-gray-800 rounded-lg p-4 text-base text-white focus:outline-none focus:border-red-500 transition-colors [color-scheme:dark]"
+                      className="w-full bg-surface border border-border rounded-lg p-4 text-base text-primary focus:outline-none focus:border-red-500 transition-colors [color-scheme:light] dark:[color-scheme:dark]"
                     />
                 </div>
                 <div>
@@ -161,7 +161,7 @@ const Estimate: React.FC = () => {
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full bg-surface border border-gray-800 rounded-lg p-4 text-base text-white mb-4 focus:outline-none focus:border-red-500"
+                      className="w-full bg-surface border border-border rounded-lg p-4 text-base text-primary mb-4 focus:outline-none focus:border-red-500"
                     />
                    <input
                       type="email"
@@ -169,7 +169,7 @@ const Estimate: React.FC = () => {
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-surface border border-gray-800 rounded-lg p-4 text-base text-white focus:outline-none focus:border-red-500"
+                      className="w-full bg-surface border border-border rounded-lg p-4 text-base text-primary focus:outline-none focus:border-red-500"
                     />
                 </div>
              </div>
@@ -180,7 +180,7 @@ const Estimate: React.FC = () => {
               className={`
                 w-full py-5 rounded-full font-bold text-lg flex items-center justify-center gap-2 transition-all
                 ${isSubmitting || !selectedService || !date
-                  ? 'bg-gray-900 text-gray-600 cursor-not-allowed'
+                  ? 'bg-surface text-secondary cursor-not-allowed'
                   : 'bg-red-600 text-white hover:bg-red-500 shadow-lg shadow-red-900/30'}
               `}
             >
@@ -193,31 +193,31 @@ const Estimate: React.FC = () => {
         {/* Right Column: Sticky Estimate Card */}
         <div className="lg:col-span-1">
           <div className="sticky top-32">
-            <div className="bg-surface border border-gray-800 rounded-2xl p-8 relative overflow-hidden">
+            <div className="bg-surface border border-border rounded-2xl p-8 relative overflow-hidden transition-colors duration-300">
                {/* Background Glow */}
                <div className="absolute -top-10 -right-10 w-40 h-40 bg-red-500/10 rounded-full blur-3xl pointer-events-none" />
                
-               <h3 className="text-xl font-serif font-bold text-white mb-6 italic border-b border-gray-800 pb-4">Estimated Cost</h3>
+               <h3 className="text-xl font-serif font-bold text-primary mb-6 italic border-b border-border pb-4">Estimated Cost</h3>
                
                <div className="space-y-4 mb-8">
-                 <div className="flex justify-between text-gray-400">
+                 <div className="flex justify-between text-secondary">
                    <span>Service Base</span>
                    <span>₩ {base.toLocaleString()}</span>
                  </div>
-                 <div className="flex justify-between text-gray-400">
+                 <div className="flex justify-between text-secondary">
                    <span>Retouch Level</span>
                    <span>x {multiplier}</span>
                  </div>
                </div>
 
-               <div className="flex justify-between items-end text-white pt-6 border-t border-gray-800">
-                 <span className="text-sm font-bold uppercase tracking-wider text-gray-500">Total</span>
+               <div className="flex justify-between items-end text-primary pt-6 border-t border-border">
+                 <span className="text-sm font-bold uppercase tracking-wider text-secondary">Total</span>
                  <span className="text-3xl font-bold font-sans text-red-500">
                    ₩ {estimatedCost.toLocaleString()}
                  </span>
                </div>
                
-               <p className="text-xs text-gray-600 mt-6 leading-relaxed">
+               <p className="text-xs text-secondary mt-6 leading-relaxed">
                  * AI 복원 작업의 경우 사진 손상도에 따라 추가 비용이 발생할 수 있습니다.
                </p>
             </div>
